@@ -25,7 +25,7 @@ $(function () {
   var today = dayjs();
   console.log(today);
   //format day object to string
-  var formattedToday = today.format('MMM D, YYYY, hh:mm a')
+  var formattedToday = today.format('dddd MMM D, YYYY, hh:mm a')
   console.log(formattedToday);
   //insert string into HTML
   var currentDayEl = $('#currentDay')
@@ -60,10 +60,22 @@ $(function () {
   // listen for button click
   // -- grab the textarea dn is valude 
   // -- set to local storag
-$(function(saveInputToTime){
-  localStorage.setItem('.textarea')
- //localStorage.getItem
-})
-
-  '.saveBtn'.addEventListener("click", saveInputToTime);
+  $(".saveBtn").click(function (event) {
+    event.preventDefault();
+    var value = $(this).siblings("textarea").val();
+    var time = $(this).parent().attr("id").split("-")[1];
+    localStorage.setItem(time, value);
+    console.log(value);
+  });
+  
+  //retrieves items from local storage and sets them in proper places
+  $("#hour-9 textarea").val(localStorage.getItem("9"));
+  $("#hour-10 textarea").val(localStorage.getItem("10"));
+  $("#hour-11 textarea").val(localStorage.getItem("11"));
+  $("#hour-12 textarea").val(localStorage.getItem("12"));
+  $("#hour-13 textarea").val(localStorage.getItem("13"));
+  $("#hour-14 textarea").val(localStorage.getItem("14"));
+  $("#hour-15 textarea").val(localStorage.getItem("15"));
+  $("#hour-16 textarea").val(localStorage.getItem("16"));
+  $("#hour-17 textarea").val(localStorage.getItem("17"));
 });
