@@ -8,5 +8,5 @@ A daily planner from 9AM to 6PM using day.js to use the current date and time. T
 
 https://alyshiak.github.io/day-planner/
 
-##Author
+## Author
 Alyshia Kandler
